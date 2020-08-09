@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Clinica Veterinaria Molina
+                          <img src="https://i.imgur.com/NnoLoWv.png">
                 </div>
 
                 <div class="links">

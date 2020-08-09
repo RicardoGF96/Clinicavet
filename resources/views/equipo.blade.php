@@ -89,6 +89,7 @@
                     <h1>Equipo Clinica Veterinaria Molina </h1>
                     <h2>Somos un equipo de profesionales conformado <br>
                         por especialistas en salud animal.<br>
+                        <img src="https://i.pinimg.com/originals/b8/4a/c2/b84ac2fa1bdd53274d992b96a0bd5347.gif">
                     </h2>
                     <a href="/">volver al Home</a><br><br>
                 </div>

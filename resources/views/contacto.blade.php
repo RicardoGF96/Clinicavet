@@ -1,2 +1,2 @@
-llama al numero en pantalla po weta
+Contactanos aqui
 +56967856510
