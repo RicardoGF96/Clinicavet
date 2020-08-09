@@ -87,7 +87,7 @@
                 <div class="links">
                     <a href="/equipo">Quienes Somos</a>
                     <a href="/contacto">Contacto</a>
-                    <a href="/">Pide tu hora</a>
+                    <a href="/pidehora">Pide tu hora</a>
                     <a href="/">Login</a>
                 </div>
             </div>

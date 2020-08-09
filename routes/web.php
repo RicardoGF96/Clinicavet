@@ -17,3 +17,4 @@ Route::view('/', 'welcome')->name('welcome');
 Route::view('/home', 'home')->name('home'); 
 Route::view('/equipo', 'equipo')->name('Equipo');
 Route::view('/contacto', 'contacto')->name('contacto');
+Route::view('/pidehora', 'pidehora')->name('pidehora');
