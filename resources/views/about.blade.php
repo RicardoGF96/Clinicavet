@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layout')
+
+@section('title', 'Acerda de nosotros')
+
+@section('content')
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Clinica Veterinaria</title>
+        <title>Equipo</title>
         <link rel = "icon" href =  "https://cdn.icon-icons.com/icons2/1448/PNG/512/42491hospital_98958.png" type = "image/x-icon">  <!-- Estos valores corresponden al icono de la pestaña -->
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -13,7 +18,7 @@
         <style>
             html, body {
                 background-color: #ABF6D1;
-                color: #57bbe0;
+                color: #2F6148;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -21,7 +26,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                height: 60vh;
             }
 
             .flex-center {
@@ -64,33 +69,22 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                         <button> <a href="/"> <img src="https://i.imgur.com/NnoLoWv.png"></a> </button>{{-- Este botton lleva al home y utiliza una imagen de internet --}}
+                    ¿Quienes somos?
                 </div>
 
-                <div class="links">
-                    <a href="/equipo">Quienes Somos</a>
-                    <a href="/contacto">Contacto</a>
-                    <a href="/pidehora">Pide tu hora</a>
-                    <a href="/">Login</a>
+                <div class="Info">
+                    <h1>Equipo Clinica Veterinaria Molina </h1>
+                    <h2>Somos un equipo de profesionales conformado <br>
+                        por especialistas en salud animal.<br>
+                        <img src="https://zoovetesmipasion.com/wp-content/uploads/2017/04/veterinario.png">
+                    </h2>
+                    <a href="/">volver al Home</a><br><br>
                 </div>
             </div>
         </div>
     </body>
-</html>
+
+@endsection

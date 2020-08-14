@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+@extends('layout')
+
+@section('title', 'Contactanos')
+
+@section('content')
+     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Clinica Veterinaria</title>
+        <title>Equipo</title>
         <link rel = "icon" href =  "https://cdn.icon-icons.com/icons2/1448/PNG/512/42491hospital_98958.png" type = "image/x-icon">  <!-- Estos valores corresponden al icono de la pestaña -->
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -13,7 +17,7 @@
         <style>
             html, body {
                 background-color: #ABF6D1;
-                color: #57bbe0;
+                color: #2F6148;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -21,7 +25,7 @@
             }
 
             .full-height {
-                height: 100vh;
+                height: 60vh;
             }
 
             .flex-center {
@@ -64,33 +68,27 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <div class='content'>
+            <h1>Contactanos</h1>
+            <h2>Recuerda que puedes contactarnos a traves del siguiente formulario!<br>Responderemos todas tus dudas!<br>Te esperamos!</h2>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <form method="POST" action="{{ route('contact') }}"> <!-- El metodo guarda la informacion en la ruta contact -->
 
-            <div class="content">
-                <div class="title m-b-md">
-                          <img src="https://i.imgur.com/NnoLoWv.png">
-                </div>
+        @csrf <!-- Metodo de proteccion contra ataques de suplantacion de identidad a traves de un token. Siempre agregar en formularios -->
+        <input name="name" placeholder="Nombre..." value={{ old('name') }}><br>
+        {!! $errors->first('name', '<small>:message</small><br>') !!}
+        <input type="email" name="email" placeholder="Email... " value={{ old('email') }}><br>
+        {!! $errors->first('email', '<small>:message</small><br>') !!}
+        <input name="subject" placeholder="Asunto..." value={{ old('subject') }}><br>
+        {!! $errors->first('subject', '<small>:message</small><br>') !!}
+        <textarea name="content" placeholder="Mensaje..." >{{ old('content') }}</textarea><br>
+        {!! $errors->first('content', '<small>:message</small><br>') !!}
+        <button>Enviar</button>
 
-                <div class="links">
-                    <a href="/equipo">Quienes Somos</a>
-                    <a href="/contacto">Contacto</a>
-                    <a href="/pidehora">Pide tu hora</a>
-                    <a href="/">Login</a>
-                </div>
-            </div>
+    </form>
+
+@endsection
+
         </div>
     </body>
-</html>
+    

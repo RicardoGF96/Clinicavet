@@ -1,4 +1,23 @@
-home no existe, si llegaste aqui es por error<br>
-<!-- <img src="https://i.pinimg.com/originals/b8/4a/c2/b84ac2fa1bdd53274d992b96a0bd5347.gif"><br> -->
-<img src="https://i.imgur.com/oe7qt8T.png">
-<img src="https://i.imgur.com/ncpq91n.png">
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
